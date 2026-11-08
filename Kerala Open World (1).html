@@ -703,6 +703,7 @@ function skyU(dt){gt=(gt+dt/60)%24;wNext-=dt;if(wAuto&&wNext<=0){const r=R();wi=
  const indoor=HS.some(h=>!h.rg.visible);RIe=rI*(indoor?.15:1);rainU(dt);cloudU(dt);ripU(dt);rainSnd(rI*(indoor?.35:1));
  clk.textContent=fmtT()+'  '+(wAuto?'Auto · ':'')+W[0]}
 {const G2=$('phG'),pp=G2.parentElement;[['🌦️','Weather',()=>{wc=(wc+1)%6;if(wc==5){wAuto=true;wNext=5;note('Weather: Auto')}else{wAuto=false;wi=wc;note('Weather: '+WS[wi][0])}}],['🕒','Time +3h',()=>{gt=(gt+3)%24;note('Time '+fmtT())}]].forEach(([i,t,fn])=>{const b=document.createElement('button');b.innerHTML=i+'<br><small style="font-size:10px">'+t+'</small>';b.style.padding='6px 2px';b.onclick=fn;G2.appendChild(b)})}
+const socket = new WebSocket('https://kerala-1-ssnc.onrender.com');
 </script>
 </body>
 </html>
